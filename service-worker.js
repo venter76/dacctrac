@@ -52,9 +52,13 @@
      *
      *  waitUntil(): activating ====> activated
      */
-    self.addEventListener('fetch', event => {
-      event.waitUntil(self.clients.claim())
-    })
+    
+        self.addEventListener('fetch', event => {
+            if (event.request.method !== 'GET' || event.request.url.endsWith('detail.ejs')) {
+                return;
+            }
+      
+        });
 
     /**
      *  @Functional Fetch
