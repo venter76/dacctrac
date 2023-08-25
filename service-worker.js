@@ -52,7 +52,7 @@
      *
      *  waitUntil(): activating ====> activated
      */
-    self.addEventListener('activate', event => {
+    self.addEventListener('fetch', event => {
       event.waitUntil(self.clients.claim())
     })
 
