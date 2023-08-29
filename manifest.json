@@ -11,12 +11,22 @@
 "orientation": "any",
 "icons": [
     {
-        "src": "/iconSmall.png",
-        "sizes": "any",
+        "src": "/iconLarge.png",
+        "sizes": "72x72",
         "type": "image/png"
       },
       {
-        "src": "/iconLarge.png",
+        "src": "/iconLarge_1.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "src": "/iconLarge_2.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/iconLarge_3.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
