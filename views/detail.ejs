@@ -129,8 +129,19 @@
                  </form>
                 </div>
     </div>
+    
              
-          
+          <!-- New Card for "Return to Base" -->
+<div class="card" style="margin-top:20px;"> <!-- Add some top margin for spacing -->
+  <div class="card-body">
+      <h5 class="card-title" style="color: white;">Return to Base:</h5>
+      <form action="/detailreturn" method="post">
+        <br>
+        <input type="hidden" name="itemName" value="<%= itemName %>">
+          <button type="submit" class="btn btn-primary">Go</button>
+      </form>
+  </div>
+</div>
             <br>
            
                   

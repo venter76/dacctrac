@@ -193,7 +193,7 @@ app.get('/logo', (req, res) => {
 app.post("/detailmove", async function(req, res) {
   const itemName = req.body.itemName;
   const selectedTheatre = req.body.theatre;
-  console.log(selectedTheatre, itemName);
+  // console.log(selectedTheatre, itemName);
 
 
   Equipment.findOneAndUpdate(
@@ -201,7 +201,7 @@ app.post("/detailmove", async function(req, res) {
     { $set: { itemLocation: selectedTheatre } }, // Update the itemLocation field
     { new: true } // Return the updated document
     ).then(updatedEquipment => {
-      console.log(updatedEquipment);
+      // console.log(updatedEquipment);
     });
 
 
@@ -224,8 +224,76 @@ res.redirect("/logo");
 });
 
 
-
+app.post("/detailreturn", async function(req, res) {
+  const itemNamereturn = req.body.itemName;
     
+  let selectedReturn; // Use let because the value might change
+
+  const validNamesC = [
+    "Ultrasound ET",
+    "V/L-scope ET",
+    "Transport Stack C",
+    "Level 1 rapid infuser A",
+    "ECG machine"
+];
+
+const validNamesU = [
+    "Ultrasound OET",
+    "V/L-scope OET",
+    "Transport Stack OET"
+];
+
+const validNamesG = [
+    "Ultrasound STORE",
+    "V/L-scope STORE",
+    "Transport Stack STORE"
+];
+
+const validNamesC2A = [
+    "V/L-scope C2A"
+];
+
+if (validNamesC.includes(itemNamereturn)) {
+    selectedReturn = 'C';
+} else if (validNamesU.includes(itemNamereturn)) {
+    selectedReturn = 'U';
+} else if (validNamesG.includes(itemNamereturn)) {
+    selectedReturn = 'G';
+} else if (validNamesC2A.includes(itemNamereturn)) {
+    selectedReturn = 'C2A';
+} else {
+    selectedReturn = 'Store'; // Default value
+}
+
+
+  // console.log(selectedReturn); // This will print the value to the console
+
+  Equipment.findOneAndUpdate(
+    { itemName: itemNamereturn }, // Find the document with the specified itemName
+    { $set: { itemLocation: selectedReturn } }, // Update the itemLocation field
+    { new: true } // Return the updated document
+    ).then(updatedEquipment => {
+      // console.log(updatedEquipment);
+    });
+
+
+      const move = new Move({
+      itemName: itemNamereturn,
+      theatre: selectedReturn,
+      date: new Date()
+});
+
+// Save the Move document
+await move.save();
+
+  
+
+
+res.redirect("/logo");
+
+
+});
+
 
 
    
