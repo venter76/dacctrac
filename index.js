@@ -170,13 +170,13 @@ app.get('/detail', (req, res) => {
 
 
 
-// app.get('/manifest.json', (req, res) => {
-//   res.sendFile(`${__dirname}/manifest.json`);
-// });
+app.get('/manifest.json', (req, res) => {
+  res.sendFile(`${__dirname}/manifest.json`);
+});
 
-// app.get('/service-worker.js', (req, res) => {
-//   res.sendFile(`${__dirname}/service-worker.js`);
-// });
+app.get('/service-worker.js', (req, res) => {
+  res.sendFile(`${__dirname}/service-worker.js`);
+});
 
 
 
