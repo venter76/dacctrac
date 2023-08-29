@@ -7,7 +7,9 @@ self.addEventListener('activate', (event) => {
     console.log('Service Worker activated!');
 });
 
-    
+self.addEventListener('fetch', (event) => {
+    console.log('fetch event', event);
+});
     
     
     // Based off of https://github.com/pwa-builder/PWABuilder/blob/main/docs/sw.js
