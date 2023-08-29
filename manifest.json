@@ -4,7 +4,7 @@
 "short_name": "Dacctrack",
 "start_url": "/",
 "display": "standalone",
-
+"description": "Equipment Location Tracker",
 "dir": "auto",
 "theme_color": "#008B8B",
 "background_color": "#008B8B",
@@ -31,15 +31,8 @@
         "type": "image/png",
         "purpose": "maskable"
       }
-],
-
-
-"prefer_related_applications": false,
-"shortcuts": [
-    {
-        "name":"Dacctrack",
-        "url":"/shortcut",
-        "description":"Shorts to main page"
-    }
 ]
+
+
+
 }
