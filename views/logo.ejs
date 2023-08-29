@@ -19,7 +19,28 @@
   <body>
     <h1> Moving ... </h1>  
   
-    <img src="/NXRX.gif" alt="Moving ...">
+    <img id="randomImage" src="/NXRX.gif" alt="Moving ...">
+
+    <script>
+        // Step 1: Prepare an array of your image filenames
+        const images = [
+            "/NXRX.gif",
+            "/cat.gif",
+            "/MrF.gif",
+            "/man.gif",
+            "/penguin.gif"
+        ];
+
+        // Step 2: Randomly select an index from that array
+        const randomIndex = Math.floor(Math.random() * images.length);
+
+        // Step 3: Use that index to select a filename
+        const selectedImage = images[randomIndex];
+
+        // Step 4: Update the src attribute of your image element with the selected filename
+        document.getElementById("randomImage").src = selectedImage;
+    </script>
+
 
 
     <script>
